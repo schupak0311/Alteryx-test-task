@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   dispatchSignInRequest,
-  dispatchSignOutRequest
 } from '../../store/auth/actions'
 
 export default () => {
@@ -16,7 +15,7 @@ export default () => {
       <div>
         {isAuth ? (
           <div>
-            <button onClick={() => dispatch(dispatchSignOutRequest())}>
+            <button>
               Log Out
             </button>
           </div>

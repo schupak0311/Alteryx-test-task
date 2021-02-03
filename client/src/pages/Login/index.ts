@@ -1,3 +1,3 @@
-import HomeContainer from './HomeContainer'
+import LoginContainer from './LoginContainer'
 
-export default HomeContainer
+export default LoginContainer
