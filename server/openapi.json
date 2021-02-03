@@ -1,0 +1,122 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Alteryx test task API",
+    "version": "1.0.0",
+    "description": "Alteryx test task API Service endpoints"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8080/"
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Login",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            },
+            "description": "String containing username"
+          },
+          {
+            "in": "body",
+            "name": "password",
+            "schema": {
+              "type": "string"
+            },
+            "description": "String containing password"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "username": {
+                      "type": "string",
+                      "example": "realdonaldtrump"
+                    },
+                    "created_on": {
+                      "type": "string",
+                      "example": "2020-12-23T11:41:04.000Z"
+                    },
+                    "updated_on": {
+                      "type": "string",
+                      "example": "2020-12-23T11:41:04.000Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/registration": {
+      "post": {
+        "summary": "Registration",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            },
+            "description": "String containing username"
+          },
+          {
+            "in": "query",
+            "name": "password",
+            "schema": {
+              "type": "string"
+            },
+            "description": "String containing password"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "username": {
+            "type": "string",
+            "example": "realdonaldtrump"
+          },
+          "password": {
+            "type": "string",
+            "example": "24542720"
+          },
+          "created_on": {
+            "type": "string",
+            "example": "2020-12-23T11:41:04.000Z"
+          },
+          "updated_on": {
+            "type": "string",
+            "example": "2020-12-23T11:41:04.000Z"
+          }
+        }
+      }
+    }
+  }
+}
